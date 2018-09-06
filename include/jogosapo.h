@@ -35,7 +35,8 @@ public:
     void printVencedor();
     //imprime a rodada atual
     void printRodada(); 
-
+    //inicia e termina o jogo
+    void partida();
 };
 
 #endif

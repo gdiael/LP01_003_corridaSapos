@@ -28,6 +28,8 @@ public:
     int getDistanciaPercorrida();
     // Retorna o número de saltos
     int getPulos();
+    // Imprime a trilha do sapo na corrida
+    void printTrilha(int distanciaFinal);
 };
 
 #endif

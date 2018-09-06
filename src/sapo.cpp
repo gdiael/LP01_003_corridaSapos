@@ -31,3 +31,13 @@ int Sapo::getDistanciaPercorrida(){
 int Sapo::getPulos(){
     return m_pulos;
 }
+
+void Sapo::printTrilha(int distanciaFinal){
+    //Inteiro que vai guardar o número de pontos
+    int numPontos = (50 * m_distancia_percorrida) / distanciaFinal;
+    string pontos = "";
+    for(int i = 0; i < numPontos; i++){
+        pontos += ".";
+    }
+    cout << pontos << getDescription() << endl;
+}
