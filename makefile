@@ -2,7 +2,7 @@
 # 
 # Aula de LP1 2018.2
 # 30/08/2018
-# Clonagem atual para teste [minha implementação] :
+# Clonagem atual para teste :
 # 				git clone https://github.com/gdiael/LP01_003_corridaSapos.git
 #
 # Gdiael Souto Barros
@@ -15,7 +15,7 @@ SRC = ./src
 BIN = ./bin
 INC = ./include
 
-PROG1 = $(BIN)/testeCorrida
+PROG1 = $(BIN)/CorridaSapos
 
 CPPFLAGS = -Wall -pedantic -std=c++11 -I$(INC)
 
@@ -42,3 +42,6 @@ $(OBJ)/mainSapo.o: $(SRC)/mainSapo.cpp $(INC)/sapo.h $(INC)/jogosapo.h
 clean: 
 	rm -f $(BIN)/*
 	rm -f $(OBJ)/*
+
+run:
+	$(PROG1)
