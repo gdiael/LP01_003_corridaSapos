@@ -15,10 +15,10 @@ private:
     std::default_random_engine gen;
     std::uniform_int_distribution<int> dis;
 public:
-    //Construtor e destrutor padrão do Sapo
+    // Construtor e destrutor padrão do Sapo
     Sapo(std::string identificador, int maximo_salto);
     ~Sapo();
-    // método para incrementar randomicamente a distância percorrida pelo sapo.
+    // Método para incrementar randomicamente a distância percorrida pelo sapo.
     void pular();
     // Retorna uma descrição sobre o Sapo {[Nome][Distância]m}
     std::string getDescription();
@@ -26,7 +26,8 @@ public:
     void print();
     // Retorna a distância percorrida
     int getDistanciaPercorrida();
-    
+    // Retorna o número de saltos
+    int getPulos();
 };
 
 #endif

@@ -28,3 +28,6 @@ int Sapo::getDistanciaPercorrida(){
     return m_distancia_percorrida;
 }
 
+int Sapo::getPulos(){
+    return m_pulos;
+}
