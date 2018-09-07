@@ -20,6 +20,7 @@ PROG1 = $(BIN)/CorridaSapos
 CPPFLAGS = -Wall -pedantic -std=c++11 -I$(INC)
 
 OBJ1 = $(OBJ)/sapo.o $(OBJ)/jogosapo.o $(OBJ)/mainSapo.o
+OBJ2 = $(SRC)/sapo.cpp $(SRC)/jogosapo.cpp $(SRC)/mainSapo.cpp
 
 all: mkdirs $(PROG1)
 
@@ -29,6 +30,9 @@ mkdirs:
 
 $(PROG1): $(OBJ1)
 	$(CC) $(CPPFLAGS) -o $(PROG1) $(OBJ1)
+
+db$(PROG1): $(OBJ2)
+	$(CC) -g $(CPPFLAGS) -o $(PROG1) $(OBJ2)
 
 $(OBJ)/sapo.o: $(SRC)/sapo.cpp $(INC)/sapo.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/sapo.cpp -o $(OBJ)/sapo.o
@@ -42,6 +46,9 @@ $(OBJ)/mainSapo.o: $(SRC)/mainSapo.cpp $(INC)/sapo.h $(INC)/jogosapo.h
 clean: 
 	rm -f $(BIN)/*
 	rm -f $(OBJ)/*
+
+debug: db$(PROG1)
+	gdb $(PROG1)
 
 run:
 	$(PROG1)
