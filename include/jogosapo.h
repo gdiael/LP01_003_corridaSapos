@@ -20,7 +20,10 @@ private:
 public:
     //Construtor e destrutor principal
     JogoSapo(int distancia_);
+    JogoSapo();
+    JogoSapo(JogoSapo &game);
     ~JogoSapo();
+    
     //método para adicionar novos sapos ao jogo
     void addSapo(Sapo * jogador_);
     //método para retornar o vencedor
@@ -37,6 +40,10 @@ public:
     void printRodada(); 
     //inicia e termina o jogo
     void partida();
+    // operador para imprimir a rodada
+    // friend std::ostream& operator<<(std::ostream &os, JogoSapo &game);
+    //operador para imprimir o rodada por ponteiro
+    friend std::ostream& operator<<(std::ostream &os, JogoSapo * game);
 };
 
 #endif

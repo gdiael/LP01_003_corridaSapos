@@ -4,6 +4,8 @@
 
 using namespace std;
 
+int Sapo::distanciaFinal = 50;
+
 Sapo::Sapo(string identificador, int maximo_salto): m_identificador(identificador), m_maximo_salto(maximo_salto), rd(), gen(rd()), dis(1, maximo_salto)
 {
     m_distancia_percorrida = 0;
@@ -32,7 +34,7 @@ int Sapo::getPulos(){
     return m_pulos;
 }
 
-void Sapo::printTrilha(int distanciaFinal){
+void Sapo::printTrilha(){
     //Inteiro que vai guardar o número de pontos
     int numPontos = (50 * m_distancia_percorrida) / distanciaFinal;
     string pontos = "";
@@ -40,4 +42,16 @@ void Sapo::printTrilha(int distanciaFinal){
         pontos += ".";
     }
     cout << pontos << getDescription() << endl;
+}
+
+ostream& operator<< (ostream &os, Sapo * sp)
+{
+    //Inteiro que vai guardar o número de pontos
+    int numPontos = (50 * sp->m_distancia_percorrida) / Sapo::distanciaFinal;
+    string pontos = "";
+    for(int i = 0; i < numPontos; i++){
+        pontos += ".";
+    }
+    cout << pontos << sp->getDescription() << endl;
+    return os;
 }

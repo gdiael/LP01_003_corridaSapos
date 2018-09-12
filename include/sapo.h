@@ -15,6 +15,7 @@ private:
     std::default_random_engine gen;
     std::uniform_int_distribution<int> dis;
 public:
+    static int distanciaFinal;
     // Construtor e destrutor padrão do Sapo
     Sapo(std::string identificador, int maximo_salto);
     ~Sapo();
@@ -29,7 +30,9 @@ public:
     // Retorna o número de saltos
     int getPulos();
     // Imprime a trilha do sapo na corrida
-    void printTrilha(int distanciaFinal);
+    void printTrilha();
+    // Imprime a trilha diretamente pelo cout
+    friend std::ostream& operator<< (std::ostream &os, Sapo * sp);
 };
 
 #endif
